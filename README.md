@@ -10,16 +10,16 @@ Gemaakt door:
 Basis: uitleg, spelen, afgaan en punten
 - [x] maak index.html, style.css en script.js met canvas
 - [ ] teken veld
-- [ ] maak vakjes
-- [ ] teken bom
+- [ ] maak vakjes  (1 rij)
+- [ ] zorg dat je 1 vakje kunt omdraaien
+- [ ] zorg dat je af bent als je een vakje met een bom omdraait
+- [ ] zorg dat je een punt krijgt als je een vakje zonder bom omdraait
 - [ ] randomize bom 
--	[ ] teken getalletjes
-- [ ] punten op scherm zetten
-- [ ] punten kunnen scoren
+-	[ ] teken getalletjes met aanwijzigen waar de bom is
 - [ ] uitlegscherm
 
 Uitbreiding: *bedenk iets, bijvoorbeeld meer tegenstanders*
-- [ ] *later uitwerken*
+- [ ] teken veld met rijen en kolommen
 - [ ] *later uitwerken*
 - [ ] *later uitwerken*
 

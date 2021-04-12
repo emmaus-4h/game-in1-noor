@@ -33,6 +33,7 @@ var vijandY = 0;   // y-positie van vijand
 
 var score = 0; // aantal behaalde punten
 
+var omgedraaid=[1,0,0,0,0,1,0,1,0,0];
 
 
 
@@ -46,8 +47,11 @@ var score = 0; // aantal behaalde punten
  * Tekent het speelveld
  */
 var tekenVeld = function () {
-  fill("purple");
-  rect(20, 20, width - 2 * 20, height - 2 * 20);
+	/* wis veld */
+	fill("black");
+	rect(0, 0, width , height );
+
+	/* teken veld */
 };
 
 
@@ -56,9 +60,24 @@ var tekenVeld = function () {
  * @param {number} x x-coördinaat
  * @param {number} y y-coördinaat
  */
-var tekenVijand = function(x, y) {
-    
-
+var tekenVijand = function (x, y) {
+	// voorbeeld voor 1 blokje
+	if (omgedraaid[2] == 0 ) {
+		fill("yellow");
+		rect(200, 2*50,50,50);
+	}
+	if (omgedraaid[2] == 1 ) {
+		fill("purple");
+		rect(200, 2*50,50,50);
+	}
+	// maak hier een looptje met de array
+	fill("white");
+	var a = 20;
+	var b = 75;
+	while (b < 1280) {
+		rect(a, b, 75, 75);
+		b += 75;
+	};
 };
 
 
@@ -67,7 +86,7 @@ var tekenVijand = function(x, y) {
  * @param {number} x x-coördinaat
  * @param {number} y y-coördinaat
  */
-var tekenKogel = function(x, y) {
+var tekenKogel = function (x, y) {
 
 
 };
@@ -78,24 +97,22 @@ var tekenKogel = function(x, y) {
  * @param {number} x x-coördinaat
  * @param {number} y y-coördinaat
  */
-var tekenSpeler = function(x, y) {
-  fill("white");
-  ellipse(x, y, 50, 50);
-};
+var tekenSpeler = function (x, y) {
 
+};
 
 /**
  * Updatet globale variabelen met positie van vijand of tegenspeler
  */
-var beweegVijand = function() {
-    
+var beweegVijand = function () {
+
 };
 
 
 /**
  * Updatet globale variabelen met positie van kogel of bal
  */
-var beweegKogel = function() {
+var beweegKogel = function () {
 
 };
 
@@ -104,7 +121,7 @@ var beweegKogel = function() {
  * Kijkt wat de toetsen/muis etc zijn.
  * Updatet globale variabele spelerX en spelerY
  */
-var beweegSpeler = function() {
+var beweegSpeler = function () {
 
 };
 
@@ -113,9 +130,9 @@ var beweegSpeler = function() {
  * Zoekt uit of de vijand is geraakt
  * @returns {boolean} true als vijand is geraakt
  */
-var checkVijandGeraakt = function() {
+var checkVijandGeraakt = function () {
 
-  return false;
+	return false;
 };
 
 
@@ -124,9 +141,9 @@ var checkVijandGeraakt = function() {
  * bijvoorbeeld door botsing met vijand
  * @returns {boolean} true als speler is geraakt
  */
-var checkSpelerGeraakt = function() {
-    
-  return false;
+var checkSpelerGeraakt = function () {
+
+	return false;
 };
 
 
@@ -134,9 +151,9 @@ var checkSpelerGeraakt = function() {
  * Zoekt uit of het spel is afgelopen
  * @returns {boolean} true als het spel is afgelopen
  */
-var checkGameOver = function() {
-    
-  return false;
+var checkGameOver = function () {
+
+	return false;
 };
 
 
@@ -146,11 +163,11 @@ var checkGameOver = function() {
  * de p5 library, zodra het spel geladen is in de browser
  */
 function setup() {
-  // Maak een canvas (rechthoek) waarin je je speelveld kunt tekenen
-  createCanvas(1280, 720);
+	// Maak een canvas (rechthoek) waarin je je speelveld kunt tekenen
+	createCanvas(1280, 720);
 
-  // Kleur de achtergrond blauw, zodat je het kunt zien
-  background('blue');
+	// Kleur de achtergrond blauw, zodat je het kunt zien
+	background('gray');
 }
 
 
@@ -160,30 +177,30 @@ function setup() {
  * uitgevoerd door de p5 library, nadat de setup functie klaar is
  */
 function draw() {
-  switch (spelStatus) {
-    case SPELEN:
-      beweegVijand();
-      beweegKogel();
-      beweegSpeler();
-      
-      if (checkVijandGeraakt()) {
-        // punten erbij
-        // nieuwe vijand maken
-      }
-      
-      if (checkSpelerGeraakt()) {
-        // leven eraf of gezondheid verlagen
-        // eventueel: nieuwe speler maken
-      }
+	switch (spelStatus) {
+		case SPELEN:
+			beweegVijand();
+			beweegKogel();
+			beweegSpeler();
 
-      tekenVeld();
-      tekenVijand(vijandX, vijandY);
-      tekenKogel(kogelX, kogelY);
-      tekenSpeler(spelerX, spelerY);
+			if (checkVijandGeraakt()) {
+				// punten erbij
+				// nieuwe vijand maken
+			}
 
-      if (checkGameOver()) {
-        spelStatus = GAMEOVER;
-      }
-      break;
-  }
+			if (checkSpelerGeraakt()) {
+				// leven eraf of gezondheid verlagen
+				// eventueel: nieuwe speler maken
+			}
+
+			tekenVeld();
+			tekenVijand(vijandX, vijandY);
+			tekenKogel(kogelX, kogelY);
+			tekenSpeler(spelerX, spelerY);
+
+			if (checkGameOver()) {
+				spelStatus = GAMEOVER;
+			}
+			break;
+	}
 }
