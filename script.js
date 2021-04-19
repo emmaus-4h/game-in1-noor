@@ -33,7 +33,7 @@ var vijandY = 0;   // y-positie van vijand
 
 var score = 0; // aantal behaalde punten
 
-var omgedraaid=[1,0,0,0,0,1,0,1,0,0];
+var omgedraaid = [1, 0, 0, 0, 0, 1, 0, 1, 0, 0];
 
 
 
@@ -49,7 +49,7 @@ var omgedraaid=[1,0,0,0,0,1,0,1,0,0];
 var tekenVeld = function () {
 	/* wis veld */
 	fill("black");
-	rect(0, 0, width , height );
+	rect(0, 0, width, height);
 
 	/* teken veld */
 };
@@ -61,23 +61,30 @@ var tekenVeld = function () {
  * @param {number} y y-coördinaat
  */
 var tekenVijand = function (x, y) {
-	// voorbeeld voor 1 blokje
-	if (omgedraaid[2] == 0 ) {
+	
+
+var i = 0;
+
+while (omgedraaid, i < 10)
+	if (omgedraaid[0 <= 10]  == 0) {
 		fill("yellow");
-		rect(200, 2*50,50,50);
+		rect(200, 2 * 50, 50, 50);
 	}
-	if (omgedraaid[2] == 1 ) {
+	if (omgedraaid[0 <= 10] == 1) {
 		fill("purple");
-		rect(200, 2*50,50,50);
+		rect(200, 2 * 50, 50, 50);
+
 	}
-	// maak hier een looptje met de array
+
+
+
 	fill("white");
 	var a = 20;
 	var b = 75;
 	while (b < 1280) {
 		rect(a, b, 75, 75);
 		b += 75;
-	};
+	}; 
 };
 
 
