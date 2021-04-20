@@ -33,7 +33,7 @@ var vijandY = 0;   // y-positie van vijand
 
 var score = 0; // aantal behaalde punten
 
-var omgedraaid = [1, 0, 0, 0, 0, 1, 0, 1, 0, 0];
+var omgedraaid = ["g", "p", "p", "p", "p", "g", "p", "g", "g", "g"];
 
 
 
@@ -65,17 +65,21 @@ var tekenVijand = function (x, y) {
 
 var i = 0;
 
-while (omgedraaid, i < 10)
-	if (omgedraaid[0 <= 10]  == 0) {
+while (i < 10) {
+
+
+
+
+	if (omgedraaid[i]  == "g") {
 		fill("yellow");
-		rect(200, 2 * 50, 50, 50);
+		rect(200, i * 50, 50, 50);
 	}
-	if (omgedraaid[0 <= 10] == 1) {
+	if (omgedraaid[i] == "p") {
 		fill("purple");
-		rect(200, 2 * 50, 50, 50);
+		rect(200, i * 50, 50, 50);
 
 	}
-
+};
 
 
 	fill("white");
