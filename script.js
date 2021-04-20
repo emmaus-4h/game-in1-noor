@@ -61,26 +61,6 @@ var tekenVeld = function () {
  * @param {number} y y-coördinaat
  */
 var tekenVijand = function (x, y) {
-	
-
-var i = 0;
-
-while (i < 10) {
-
-
-
-
-	if (omgedraaid[i]  == "g") {
-		fill("yellow");
-		rect(200, i * 50, 50, 50);
-	}
-	if (omgedraaid[i] == "p") {
-		fill("purple");
-		rect(200, i * 50, 50, 50);
-
-	}
-};
-
 
 	fill("white");
 	var a = 20;
@@ -88,7 +68,27 @@ while (i < 10) {
 	while (b < 1280) {
 		rect(a, b, 75, 75);
 		b += 75;
-	}; 
+	};
+
+	var i = 0;
+
+	while (i < 10) {
+
+
+
+
+		if (omgedraaid[i] == "g") {
+			fill("yellow");
+			rect(200, i * 50, 50, 50);
+		}
+		if (omgedraaid[i] == "p") {
+			fill("purple");
+			rect(200, i * 50, 50, 50);
+
+		}
+	};
+
+
 };
 
 
@@ -214,4 +214,5 @@ function draw() {
 			}
 			break;
 	}
-}
+};
+
