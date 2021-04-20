@@ -61,7 +61,7 @@ var tekenVeld = function () {
  * @param {number} y y-coördinaat
  */
 var tekenVijand = function (x, y) {
-
+/*
 	fill("white");
 	var a = 20;
 	var b = 75;
@@ -69,6 +69,7 @@ var tekenVijand = function (x, y) {
 		rect(a, b, 75, 75);
 		b += 75;
 	};
+	*/
 
 	var i = 0;
 
@@ -86,6 +87,7 @@ var tekenVijand = function (x, y) {
 			rect(200, i * 50, 50, 50);
 
 		}
+		i=i+1;
 	};
 
 
