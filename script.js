@@ -35,64 +35,41 @@ var score = 0; // aantal behaalde punten
 
 var omgedraaid = ["g", "p", "p", "p", "p", "g", "p", "g", "g", "g"];
 
-
-
-
 /* ********************************************* */
 /*      functies die je gebruikt in je game      */
 /* ********************************************* */
-
-
-/**
+/* 
  * Tekent het speelveld
  */
+
+
 var tekenVeld = function () {
-	/* wis veld */
-	fill("black");
+	fill("grey");
 	rect(0, 0, width, height);
-
-	/* teken veld */
 };
-
 
 /**
  * Tekent de vijand
  * @param {number} x x-coördinaat
  * @param {number} y y-coördinaat
  */
+
 var tekenVijand = function (x, y) {
-/*
-	fill("white");
-	var a = 20;
-	var b = 75;
-	while (b < 1280) {
-		rect(a, b, 75, 75);
-		b += 75;
-	};
-	*/
 
 	var i = 0;
-
 	while (i < 10) {
-
-
-
 
 		if (omgedraaid[i] == "g") {
 			fill("yellow");
-			rect(200, i * 50, 50, 50);
+			rect(0, i * 72, 70, 70);
 		}
 		if (omgedraaid[i] == "p") {
 			fill("purple");
-			rect(200, i * 50, 50, 50);
-
+			rect(0, i * 72, 70, 70);
 		}
-		i=i+1;
+		i = i + 1;
 	};
-
-
 };
-
 
 /**
  * Tekent de kogel of de bal
@@ -101,15 +78,14 @@ var tekenVijand = function (x, y) {
  */
 var tekenKogel = function (x, y) {
 
-
 };
-
 
 /**
  * Tekent de speler
  * @param {number} x x-coördinaat
  * @param {number} y y-coördinaat
  */
+
 var tekenSpeler = function (x, y) {
 
 };
@@ -117,6 +93,7 @@ var tekenSpeler = function (x, y) {
 /**
  * Updatet globale variabelen met positie van vijand of tegenspeler
  */
+
 var beweegVijand = function () {
 
 };
@@ -125,6 +102,7 @@ var beweegVijand = function () {
 /**
  * Updatet globale variabelen met positie van kogel of bal
  */
+
 var beweegKogel = function () {
 
 };
@@ -134,6 +112,7 @@ var beweegKogel = function () {
  * Kijkt wat de toetsen/muis etc zijn.
  * Updatet globale variabele spelerX en spelerY
  */
+
 var beweegSpeler = function () {
 
 };
@@ -143,6 +122,7 @@ var beweegSpeler = function () {
  * Zoekt uit of de vijand is geraakt
  * @returns {boolean} true als vijand is geraakt
  */
+
 var checkVijandGeraakt = function () {
 
 	return false;
@@ -154,6 +134,7 @@ var checkVijandGeraakt = function () {
  * bijvoorbeeld door botsing met vijand
  * @returns {boolean} true als speler is geraakt
  */
+
 var checkSpelerGeraakt = function () {
 
 	return false;
@@ -164,6 +145,7 @@ var checkSpelerGeraakt = function () {
  * Zoekt uit of het spel is afgelopen
  * @returns {boolean} true als het spel is afgelopen
  */
+
 var checkGameOver = function () {
 
 	return false;
@@ -175,12 +157,13 @@ var checkGameOver = function () {
  * de code in deze functie wordt één keer uitgevoerd door
  * de p5 library, zodra het spel geladen is in de browser
  */
+
 function setup() {
 	// Maak een canvas (rechthoek) waarin je je speelveld kunt tekenen
 	createCanvas(1280, 720);
 
 	// Kleur de achtergrond blauw, zodat je het kunt zien
-	background('gray');
+	background('blue');
 }
 
 
