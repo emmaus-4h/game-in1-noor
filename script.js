@@ -35,7 +35,7 @@ var score = 0; // aantal behaalde punten
 var x = 0;
 var y = 0;
 
-var omgedraaid = ["c", "b", "b", "c", "c", "c", "c", "c", "c", "c"];
+
 
 
 /* ********************************************* */
@@ -49,34 +49,9 @@ var omgedraaid = ["c", "b", "b", "c", "c", "c", "c", "c", "c", "c"];
 
 
 var tekenVeld = function () {
-
-	for (var i = 0; i < 17; i++) {
-
-		fill("yellow");
-		rect(i * 72, 0, 70, 70);
-		fill('yellow');
-		rect(i * 72, 72, 70, 70);
-		fill('yellow');
-		rect(i * 72, 144, 70, 70);
-		fill('yellow');
-		rect(i * 72, 216, 70, 70);
-		//fill('yellow');
-		//rect(i * 72, 288, 70, 70);
-		fill('yellow');
-		rect(i * 72, 360, 70, 70);
-		fill('yellow');
-		rect(i * 72, 432, 70, 70);
-		fill('yellow');
-		rect(i * 72, 504, 70, 70);
-		fill('yellow');
-		rect(i * 72, 576, 70, 70);
-		fill('yellow');
-		rect(i * 72, 648, 70, 70);
-		fill('yellow');
-		rect(i * 72, 720, 70, 70);
-		//fill("black");
-		//rect(144, 288, 70, 70);
-	};
+fill(211, 207, 227);
+rect(20,20, width - 2* 20, height -2 *20);
+	
 };
 
 var blokjes = function () {
@@ -91,35 +66,15 @@ var blokjes = function () {
 ;
 
 
-var tekenSpeler = function () {
-
+var tekenSpeler = function (x,y) {
+    
 };
 
 
 var tekenVijand = function (x, y) {
-
-	var i = 0;
-	var x = 72;
-	while (i < 12) {
-
-		if (omgedraaid[i] == "b") {
-			fill("red");
-			rect(i * 72, 72, 70, 70);
-			fill("red");
-			rect(i * 72, 72, 70, 70);
-			fill("red");
-			rect(i * 72, 144, 70, 70);
-		}
-		if (omgedraaid[i] == "c") {
-			fill("white");
-			rect(0, i * 72, 70, 70);
-			fill("white");
-			rect(i * 72, i * 72, 70, 70);
-
-		};
-		i = i + 1;
-		x = x + 1;
-	};
+fill("black");
+ellipse(40,40,20,20);
+	
 };
 
 
@@ -130,6 +85,7 @@ var tekenVijand = function (x, y) {
  */
 
 var tekenKogel = function (x, y) {
+
 };
 
 
@@ -140,9 +96,11 @@ var tekenKogel = function (x, y) {
  */
 
 var tekenSpeler = function (x, y) {
-
-  fill("black");
-	rect(144,288,70,70);
+ fill(242, 242, 242);
+  rect(mouseX , 20, 240, 10);
+	fill(242, 242, 242);
+	rect(mouseX, 760, 240,10);
+	
 };
 
 /**
@@ -169,13 +127,9 @@ var beweegKogel = function () {
  * Updatet globale variabele spelerX en spelerY
  */
 
-var beweegSpeler = function mouseClicked() {
-  let value = 0;
-	if (value === 0) {
-    value = 255;
-  } else {
-    value = 0;
-  }
+var beweegSpeler = function () {
+
+	
 };
 /**
  * Zoekt uit of de vijand is geraakt
@@ -222,7 +176,7 @@ function setup() {
 	createCanvas(1225, 790);
 
 	// Kleur de achtergrond blauw, zodat je het kunt zien
-	background('gray');
+	background("black");
 }
 
 
