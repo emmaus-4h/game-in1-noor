@@ -11,6 +11,7 @@ Basis: uitleg, spelen, afgaan en punten
 - [x] maak index.html, style.css en script.js met canvas
 - [x] teken veld
 - [x] maak vakjes  (1 rij)
+- [ ] maak tweede laag
 - [ ] zorg dat je 1 vakje kunt omdraaien
 - [ ] zorg dat je af bent als je een vakje met een bom omdraait
 - [ ] zorg dat je een punt krijgt als je een vakje zonder bom omdraait

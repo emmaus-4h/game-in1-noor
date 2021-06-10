@@ -1,6 +1,6 @@
 /// @ts-check
-/// <reference path=".gitpod/p5.global-mode.d.ts" />
-"use strict";
+/// <reference path=".gitpod/p5.global-mode.d.ts" />"use strict";
+
 
 /* Game opdracht
    Informatica - Emmauscollege Rotterdam
@@ -32,8 +32,11 @@ var vijandX = 0;   // x-positie van vijand
 var vijandY = 0;   // y-positie van vijand
 
 var score = 0; // aantal behaalde punten
+var x = 0;
+var y = 0;
 
-var omgedraaid = ["g", "p", "p", "p", "p", "g", "p", "g", "g", "g"];
+var omgedraaid = ["c", "b", "b", "c", "c", "c", "c", "c", "c", "c"];
+
 
 /* ********************************************* */
 /*      functies die je gebruikt in je game      */
@@ -43,9 +46,41 @@ var omgedraaid = ["g", "p", "p", "p", "p", "g", "p", "g", "g", "g"];
  */
 
 
+
+
 var tekenVeld = function () {
-	fill("grey");
-	rect(0, 0, width, height);
+
+	for (var i = 0; i < 17; i++) {
+
+		fill("yellow");
+		rect(i * 72, 0, 70, 70);
+		fill('yellow');
+		rect(i * 72, 72, 70, 70);
+		fill('yellow');
+		rect(i * 72, 144, 70, 70);
+		fill('yellow');
+		rect(i * 72, 216, 70, 70);
+		//fill('yellow');
+		//rect(i * 72, 288, 70, 70);
+		fill('yellow');
+		rect(i * 72, 360, 70, 70);
+		fill('yellow');
+		rect(i * 72, 432, 70, 70);
+		fill('yellow');
+		rect(i * 72, 504, 70, 70);
+		fill('yellow');
+		rect(i * 72, 576, 70, 70);
+		fill('yellow');
+		rect(i * 72, 648, 70, 70);
+		fill('yellow');
+		rect(i * 72, 720, 70, 70);
+		//fill("black");
+		//rect(144, 288, 70, 70);
+	};
+};
+
+var blokjes = function () {
+
 };
 
 /**
@@ -53,32 +88,50 @@ var tekenVeld = function () {
  * @param {number} x x-coördinaat
  * @param {number} y y-coördinaat
  */
+;
+
+
+var tekenSpeler = function () {
+
+};
+
 
 var tekenVijand = function (x, y) {
 
 	var i = 0;
-	while (i < 10) {
+	var x = 72;
+	while (i < 12) {
 
-		if (omgedraaid[i] == "g") {
-			fill("yellow");
-			rect(0, i * 72, 70, 70);
+		if (omgedraaid[i] == "b") {
+			fill("red");
+			rect(i * 72, 72, 70, 70);
+			fill("red");
+			rect(i * 72, 72, 70, 70);
+			fill("red");
+			rect(i * 72, 144, 70, 70);
 		}
-		if (omgedraaid[i] == "p") {
-			fill("purple");
+		if (omgedraaid[i] == "c") {
+			fill("white");
 			rect(0, i * 72, 70, 70);
-		}
+			fill("white");
+			rect(i * 72, i * 72, 70, 70);
+
+		};
 		i = i + 1;
+		x = x + 1;
 	};
 };
+
 
 /**
  * Tekent de kogel of de bal
  * @param {number} x x-coördinaat
  * @param {number} y y-coördinaat
  */
-var tekenKogel = function (x, y) {
 
+var tekenKogel = function (x, y) {
 };
+
 
 /**
  * Tekent de speler
@@ -88,6 +141,8 @@ var tekenKogel = function (x, y) {
 
 var tekenSpeler = function (x, y) {
 
+  fill("black");
+	rect(144,288,70,70);
 };
 
 /**
@@ -95,6 +150,7 @@ var tekenSpeler = function (x, y) {
  */
 
 var beweegVijand = function () {
+
 
 };
 
@@ -113,11 +169,14 @@ var beweegKogel = function () {
  * Updatet globale variabele spelerX en spelerY
  */
 
-var beweegSpeler = function () {
-
+var beweegSpeler = function mouseClicked() {
+  let value = 0;
+	if (value === 0) {
+    value = 255;
+  } else {
+    value = 0;
+  }
 };
-
-
 /**
  * Zoekt uit of de vijand is geraakt
  * @returns {boolean} true als vijand is geraakt
@@ -160,10 +219,10 @@ var checkGameOver = function () {
 
 function setup() {
 	// Maak een canvas (rechthoek) waarin je je speelveld kunt tekenen
-	createCanvas(1280, 720);
+	createCanvas(1225, 790);
 
 	// Kleur de achtergrond blauw, zodat je het kunt zien
-	background('blue');
+	background('gray');
 }
 
 
@@ -191,7 +250,6 @@ function draw() {
 
 			tekenVeld();
 			tekenVijand(vijandX, vijandY);
-			tekenKogel(kogelX, kogelY);
 			tekenSpeler(spelerX, spelerY);
 
 			if (checkGameOver()) {
@@ -200,4 +258,3 @@ function draw() {
 			break;
 	}
 };
-
