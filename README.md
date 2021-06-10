@@ -1,6 +1,6 @@
 Deze game is gebaseerd op het template voor 4HV van het Emmauscollege Rotterdam
 
-## Mijn spel: *naam van het spel*
+## Mijn spel: pong ping 2D
 Gemaakt door:
 - *Noor Bouharrou*
 
@@ -10,17 +10,17 @@ Gemaakt door:
 Basis: uitleg, spelen, afgaan en punten
 - [x] maak index.html, style.css en script.js met canvas
 - [x] teken veld
-- [x] maak vakjes  (1 rij)
-- [ ] maak tweede laag
-- [ ] zorg dat je 1 vakje kunt omdraaien
-- [ ] zorg dat je af bent als je een vakje met een bom omdraait
-- [ ] zorg dat je een punt krijgt als je een vakje zonder bom omdraait
-- [ ] randomize bom 
--	[ ] teken getalletjes met aanwijzigen waar de bom is
-- [ ] uitlegscherm
+- [x] maak balkjes
+- [x] maak bal
+- [x] laat bal bewegen
+- [ ] laat bal rebouncen op de randen
+- [ ] bal verbinden met de balkjes 
+- [ ] punten tellen
+-	[ ] verlies aangeven
+- [ ] scherm maken
 
 Uitbreiding: *bedenk iets, bijvoorbeeld meer tegenstanders*
-- [ ] teken veld met rijen en kolommen
+- [ ] moeilijkere levels
 - [ ] *later uitwerken*
 - [ ] *later uitwerken*
 
