@@ -32,8 +32,15 @@ var vijandX = 0;   // x-positie van vijand
 var vijandY = 0;   // y-positie van vijand
 
 var score = 0; // aantal behaalde punten
-var x = 0;
-var y = 0;
+
+var h = 50;
+var t = 90;
+var opp = 50;
+var opp = 40;
+var hVeranderd = 5;
+var tVeranderd = 5;
+
+
 
 
 
@@ -49,14 +56,10 @@ var y = 0;
 
 
 var tekenVeld = function () {
-fill(211, 207, 227);
-rect(20,20, width - 2* 20, height -2 *20);
-	
+	fill(242, 242, 242);
+	rect(12, 20, 1200, 790);
 };
 
-var blokjes = function () {
-
-};
 
 /**
  * Tekent de vijand
@@ -66,15 +69,29 @@ var blokjes = function () {
 ;
 
 
-var tekenSpeler = function (x,y) {
-    
+var tekenSpeler = function (x, y) {
+
 };
 
 
-var tekenVijand = function (x, y) {
-fill("black");
-ellipse(40,40,20,20);
-	
+var tekenVijand = function draw(x, y) {
+	background(130, 200, 150);
+
+
+	/*var h = 70;
+	var e = 1;
+	var t = 90;
+	var opp1 = 50;
+	var opp2 = 40;*/
+
+
+	fill("black");
+	ellipse(h, t, opp, opp);
+
+
+
+
+
 };
 
 
@@ -96,11 +113,11 @@ var tekenKogel = function (x, y) {
  */
 
 var tekenSpeler = function (x, y) {
- fill(242, 242, 242);
-  rect(mouseX , 20, 240, 10);
 	fill(242, 242, 242);
-	rect(mouseX, 760, 240,10);
-	
+	rect(mouseX, 0, 250, 25);
+	fill(242, 242, 242);
+	rect(mouseX, 810, 250, 25);
+
 };
 
 /**
@@ -108,8 +125,18 @@ var tekenSpeler = function (x, y) {
  */
 
 var beweegVijand = function () {
+	var speedh = 10;
+	var speedt = 15;
 
+	h = speedh + h;
+	t = speedt + t;
 
+	if (h > 770 || h < 0) {
+	speedh = speedh * -1;
+	}
+	if (t > 700 || t < 0) {
+		speedt *= -1;
+	}
 };
 
 
@@ -129,7 +156,7 @@ var beweegKogel = function () {
 
 var beweegSpeler = function () {
 
-	
+
 };
 /**
  * Zoekt uit of de vijand is geraakt
@@ -173,10 +200,12 @@ var checkGameOver = function () {
 
 function setup() {
 	// Maak een canvas (rechthoek) waarin je je speelveld kunt tekenen
-	createCanvas(1225, 790);
+	createCanvas(1220, 835);
+	var x = width / 2;
+	var y = height;
 
 	// Kleur de achtergrond blauw, zodat je het kunt zien
-	background("black");
+	background("purple");
 }
 
 
