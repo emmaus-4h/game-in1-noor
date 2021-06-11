@@ -35,6 +35,9 @@ var score = 0; // aantal behaalde punten
 
 var h = 50;
 var t = 90;
+var hspeed = 5;
+var tspeed = 5;
+var k = 50;
 var opp = 50;
 var opp = 40;
 var hVeranderd = 5;
@@ -76,21 +79,8 @@ var tekenSpeler = function (x, y) {
 
 var tekenVijand = function draw(x, y) {
 	background(130, 200, 150);
-
-
-	/*var h = 70;
-	var e = 1;
-	var t = 90;
-	var opp1 = 50;
-	var opp2 = 40;*/
-
-
 	fill("black");
 	ellipse(h, t, opp, opp);
-
-
-
-
 
 };
 
@@ -125,19 +115,22 @@ var tekenSpeler = function (x, y) {
  */
 
 var beweegVijand = function () {
-	var speedh = 10;
-	var speedt = 15;
 
-	h = speedh + h;
-	t = speedt + t;
+h += hspeed;
+  t += tspeed;
+  if (h > width - opp || h < opp) {
+    hspeed = -hspeed;
+  }
+  if (t > height - opp || t < opp) {
+    tspeed = -tspeed;
+  }
 
-	if (h > 770 || h < 0) {
-	speedh = speedh * -1;
-	}
-	if (t > 700 || t < 0) {
-		speedt *= -1;
-	}
+
+
 };
+
+
+
 
 
 /**
@@ -201,8 +194,7 @@ var checkGameOver = function () {
 function setup() {
 	// Maak een canvas (rechthoek) waarin je je speelveld kunt tekenen
 	createCanvas(1220, 835);
-	var x = width / 2;
-	var y = height;
+
 
 	// Kleur de achtergrond blauw, zodat je het kunt zien
 	background("purple");
