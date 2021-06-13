@@ -188,9 +188,9 @@ var checkSpelerGeraakt = function () {
 var checkGameOver = function () {
 
 if 
- ((balX >= 811 && balY >= 75) || (balX <= 70 && balY <= 0 ))
+ ((balX >= 811 && balY >= 75) || (balX >= 70 && balY <= 0 ))
 {
-    background("red");
+    background("210,205,222");
     fill("black");
 		textSize(100);
 		text("game over", 420,300);
