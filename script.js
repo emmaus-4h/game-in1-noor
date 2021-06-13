@@ -42,9 +42,7 @@ var rectWidth = 250;
 var rectHeight = 25;
 var opp = 35;
 
-var started = false;
 
-var score = 1;
 
 
 
@@ -64,6 +62,7 @@ var score = 1;
 var tekenVeld = function () {
 	fill(242, 242, 242);
 	rect(12, 20, 1200, 790);
+
 };
 
 
@@ -163,8 +162,26 @@ var beweegSpeler = function () {
  */
 
 var checkVijandGeraakt = function () {
+ /*if ((balX > mouseX &&
+		balX < mouseX + rectWidth) &&
+    (balY + rectHeight >= 810 || balY + rectHeight <= 75)) {
+  
+	background(210,205,222);
+  fill("white");
+  textSize(100);
+  text("Score: " + 1, 295, 400);
+}*/
 
-	return false;
+  if ((balX > mouseX &&
+		balX < mouseX + rectWidth) &&
+    (balY + rectHeight >= 810 || balY + rectHeight <= 75)) {
+ 
+		background(130, 200, 150);
+		fill("white");
+		textSize(100);
+		text("Score:"+ score, 300, 400);
+  }
+  score = score + 1;
 };
 
 
@@ -176,6 +193,10 @@ var checkVijandGeraakt = function () {
 
 var checkSpelerGeraakt = function () {
 
+if 
+ ((balX >= 811 && balY >= 75) || (balX >= 70 && balY <= 0 )) {
+	 spelStatus = GAMEOVER;
+ }
     
 };
 
@@ -190,12 +211,12 @@ var checkGameOver = function () {
 if 
  ((balX >= 811 && balY >= 75) || (balX >= 70 && balY <= 0 ))
 {
-    background("210,205,222");
-    fill("black");
+    background(210,205,222);
+    fill("white");
 		textSize(100);
-		text("game over", 420,300);
+		text("GAME OVER", 295,400);
 }
-	
+	return false;
 };
 
 

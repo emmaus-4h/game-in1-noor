@@ -15,7 +15,8 @@ Basis: uitleg, spelen, afgaan en punten
 - [x] laat bal bewegen
 - [x] laat bal rebouncen op de randen
 - [x] bal verbinden met de balkjes 
--	[ ] verlies aangeven
+- [ ] punten aangeven
+-	[x] verlies aangeven
 - [ ] scherm maken
 
 Uitbreiding: *bedenk iets, bijvoorbeeld meer tegenstanders*
