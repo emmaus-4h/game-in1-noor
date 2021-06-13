@@ -170,7 +170,7 @@ var checkVijandGeraakt = function () {
 		balX < mouseX + rectWidth) &&
     (balY + rectHeight >= 810 || balY + rectHeight <= 75)) {
 	
-p = createP("SCORE:" + score + 1);
+p = createP("SCORE:" + score);
 p.style('font-size', '100px');
 p.style('font', 'Arial Narrow')
 p.style('color', '#f5faf6')
