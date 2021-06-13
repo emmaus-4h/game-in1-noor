@@ -13,7 +13,7 @@ Basis: uitleg, spelen, afgaan en punten
 - [x] maak balkjes
 - [x] maak bal
 - [x] laat bal bewegen
-- [ ] laat bal rebouncen op de randen
+- [x] laat bal rebouncen op de randen
 - [ ] bal verbinden met de balkjes 
 - [ ] punten tellen
 -	[ ] verlies aangeven

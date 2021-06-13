@@ -33,15 +33,16 @@ var vijandY = 0;   // y-positie van vijand
 
 var score = 0; // aantal behaalde punten
 
-var h = 50;
-var t = 90;
-var hspeed = 5;
-var tspeed = 5;
-var k = 50;
-var opp = 50;
-var opp = 40;
-var hVeranderd = 5;
-var tVeranderd = 5;
+var balX = 50;
+var balY = 90;
+var balXspeed = 15;
+var balYspeed = 15;
+
+var rectWidth = 250;
+var rectHeight = 25;
+var opp = 35;
+
+var started = false;
 
 
 
@@ -72,15 +73,10 @@ var tekenVeld = function () {
 ;
 
 
-var tekenSpeler = function (x, y) {
-
-};
-
-
 var tekenVijand = function draw(x, y) {
 	background(130, 200, 150);
 	fill("black");
-	ellipse(h, t, opp, opp);
+	ellipse(balX, balY, opp, opp);
 
 };
 
@@ -103,10 +99,12 @@ var tekenKogel = function (x, y) {
  */
 
 var tekenSpeler = function (x, y) {
+	
+
 	fill(242, 242, 242);
-	rect(mouseX, 0, 250, 25);
+	rect(mouseX, 0, rectWidth, rectHeight);
 	fill(242, 242, 242);
-	rect(mouseX, 810, 250, 25);
+	rect(mouseX, 810, rectWidth, rectHeight);
 
 };
 
@@ -116,15 +114,31 @@ var tekenSpeler = function (x, y) {
 
 var beweegVijand = function () {
 
-h += hspeed;
-  t += tspeed;
-  if (h > width - opp || h < opp) {
-    hspeed = -hspeed;
-  }
-  if (t > height - opp || t < opp) {
-    tspeed = -tspeed;
-  }
 
+	balX += balXspeed;
+	balY += balYspeed;
+	
+	/* if (/*balX < rectWidth + rectHeight && balX > rectWidth  && balY  >  0 && balY < 810 + rectHeight) {
+		balXspeed = -balXspeed;
+		balYspeed = -balYspeed;
+	} */
+
+
+  
+
+   if (balX > width - opp || balX < opp) {
+     balXspeed = -balXspeed;
+   }
+  
+
+	if ((balX > mouseX &&
+      balX < mouseX + rectWidth) &&
+    (balY + rectHeight >= 810)) {
+    balXspeed *= -1;
+    balYspeed *= -1;
+		}
+
+	
 
 
 };
