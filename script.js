@@ -116,6 +116,7 @@ var tekenSpeler = function (x, y) {
 var beweegVijand = function () {
 
 
+
 	balX += balXspeed;
 	balY += balYspeed;
 
@@ -130,6 +131,7 @@ var beweegVijand = function () {
 		balXspeed = -balXspeed;
 		balYspeed = -balYspeed;
 	}
+	
   
 
 };
@@ -162,20 +164,19 @@ var beweegSpeler = function () {
  */
 
 var checkVijandGeraakt = function () {
- var score = 0;
- 
+  var score = 1;
+
  if ((balX > mouseX &&
 		balX < mouseX + rectWidth) &&
     (balY + rectHeight >= 810 || balY + rectHeight <= 75)) {
-
-score = score + 1;	
-p = createP("SCORE:" + score);
+	
+p = createP("SCORE:" + score + 1);
 p.style('font-size', '100px');
-p.style('font', 'arial')
+p.style('font', 'Arial Narrow')
 p.style('color', '#f5faf6')
 p.position(500, 330);
   }
-	return true;
+score++;
 };
 
 
