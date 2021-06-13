@@ -162,26 +162,20 @@ var beweegSpeler = function () {
  */
 
 var checkVijandGeraakt = function () {
- /*if ((balX > mouseX &&
-		balX < mouseX + rectWidth) &&
-    (balY + rectHeight >= 810 || balY + rectHeight <= 75)) {
-  
-	background(210,205,222);
-  fill("white");
-  textSize(100);
-  text("Score: " + 1, 295, 400);
-}*/
-
-  if ((balX > mouseX &&
-		balX < mouseX + rectWidth) &&
-    (balY + rectHeight >= 810 || balY + rectHeight <= 75)) {
+ var score = 0;
  
-		background(130, 200, 150);
-		fill("white");
-		textSize(100);
-		text("Score:"+ score, 300, 400);
+ if ((balX > mouseX &&
+		balX < mouseX + rectWidth) &&
+    (balY + rectHeight >= 810 || balY + rectHeight <= 75)) {
+
+score = score + 1;	
+p = createP("SCORE:" + score);
+p.style('font-size', '100px');
+p.style('font', 'arial')
+p.style('color', '#f5faf6')
+p.position(500, 330);
   }
-  score = score + 1;
+	return true;
 };
 
 
@@ -197,9 +191,8 @@ if
  ((balX >= 811 && balY >= 75) || (balX >= 70 && balY <= 0 )) {
 	 spelStatus = GAMEOVER;
  }
-    
+   
 };
-
 
 /**
  * Zoekt uit of het spel is afgelopen
@@ -216,6 +209,7 @@ if
 		textSize(100);
 		text("GAME OVER", 295,400);
 }
+
 	return false;
 };
 
@@ -249,6 +243,7 @@ function draw() {
 			beweegSpeler();
 
 			if (checkVijandGeraakt()) {
+			
 				// punten erbij
 				// nieuwe vijand maken
 			}

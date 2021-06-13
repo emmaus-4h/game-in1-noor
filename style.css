@@ -16,4 +16,18 @@ html, body {
   /* verwijder marge tussen canvas en rand van window
    */ 
   margin: 0px;
+
+}
+
+.uitleg {
+  padding-left: 20px;
+	color: #02a67a;
+	display: inline;
+	font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+	font-size: 24px;
+	margin-left: 0px;
+}
+
+div {
+	padding-left: 88px;
 }
