@@ -44,6 +44,8 @@ var opp = 35;
 
 var started = false;
 
+var score = 1;
+
 
 
 
@@ -99,7 +101,7 @@ var tekenKogel = function (x, y) {
  */
 
 var tekenSpeler = function (x, y) {
-	
+
 
 	fill(242, 242, 242);
 	rect(mouseX, 0, rectWidth, rectHeight);
@@ -117,29 +119,19 @@ var beweegVijand = function () {
 
 	balX += balXspeed;
 	balY += balYspeed;
-	
-	/* if (/*balX < rectWidth + rectHeight && balX > rectWidth  && balY  >  0 && balY < 810 + rectHeight) {
+
+
+	if (balX > width - opp || balX < opp) {
 		balXspeed = -balXspeed;
-		balYspeed = -balYspeed;
-	} */
-
-
-  
-
-   if (balX > width - opp || balX < opp) {
-     balXspeed = -balXspeed;
-   }
-  
+	}
 
 	if ((balX > mouseX &&
-      balX < mouseX + rectWidth) &&
-    (balY + rectHeight >= 810)) {
-    balXspeed *= -1;
-    balYspeed *= -1;
-		}
-
-	
-
+		balX < mouseX + rectWidth) &&
+		(balY + rectHeight >= 810 || balY + rectHeight <= 75)) {
+		balXspeed = -balXspeed;
+		balYspeed = -balYspeed;
+	}
+  
 
 };
 
@@ -184,7 +176,7 @@ var checkVijandGeraakt = function () {
 
 var checkSpelerGeraakt = function () {
 
-	return false;
+    
 };
 
 
@@ -195,7 +187,15 @@ var checkSpelerGeraakt = function () {
 
 var checkGameOver = function () {
 
-	return false;
+if 
+ ((balX >= 811 && balY >= 75) || (balX <= 70 && balY <= 0 ))
+{
+    background("red");
+    fill("black");
+		textSize(100);
+		text("game over", 420,300);
+}
+	
 };
 
 

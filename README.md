@@ -14,7 +14,7 @@ Basis: uitleg, spelen, afgaan en punten
 - [x] maak bal
 - [x] laat bal bewegen
 - [x] laat bal rebouncen op de randen
-- [ ] bal verbinden met de balkjes 
+- [x] bal verbinden met de balkjes 
 - [ ] punten tellen
 -	[ ] verlies aangeven
 - [ ] scherm maken
